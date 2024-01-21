@@ -1,7 +1,7 @@
 {
   "name": "hellopridebot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Discord bot that reacts with emojis to new users",
   "main": "index.js",
   "engines": {
     "node":"16.x"
