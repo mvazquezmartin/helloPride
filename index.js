@@ -15,8 +15,7 @@ client.once(Events.ClientReady, (readyClient) => {
   console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
-client.on("messageCreate", (msg) => {
-  console.log(msg);
+client.on("messageCreate", (msg) => {  
   if (msg.system && msg.type === 7) {
     const randomReaction =
       reactions[Math.floor(Math.random() * reactions.length)];
