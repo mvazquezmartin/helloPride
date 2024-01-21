@@ -1,8 +1,12 @@
 require("dotenv").config();
 const express = require("express");
+const fetch = require("node-fetch");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 
 const reactions = ["🌈", "🏳‍🌈", "👬", "💅", "🍌", ""];
+const reactionsLength = reactions.length;
+const randomReaction = reactions[Math.floor(Math.random() * reactionsLength)];
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -10,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Pong!");
 });
 
-function sendPing() { 
+function sendPing() {
   fetch("https://hellopridebot.glitch.me/")
     .then((response) => response.text())
     .then((data) => console.log(data))
@@ -37,8 +41,6 @@ client.once(Events.ClientReady, (readyClient) => {
 
 client.on("messageCreate", (msg) => {
   if (msg.system && msg.type === 7) {
-    const randomReaction =
-      reactions[Math.floor(Math.random() * reactions.length)];
     msg.react(randomReaction).catch(console.error);
   }
 });
