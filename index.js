@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const fetch = require("node-fetch");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 
 const reactions = () => {
@@ -39,7 +38,7 @@ const client = new Client({
 });
 
 client.once(Events.ClientReady, (readyClient) => {
-  console.log(`Ready! Logged in as ${readyClient.user.tag}`);  
+  console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
 client.on("messageCreate", (msg) => {
