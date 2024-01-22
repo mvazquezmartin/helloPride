@@ -44,13 +44,12 @@ client.on("messageCreate", (msg) => {
 });
 
 client.on("messageCreate", (msg) => {
-  console.log(msg);
   if (!msg.author.bot) {
     const member = msg.guild.members.cache.get(msg.author.id);
     if (member) {
       const roles = member.roles.cache.map((role) => role.name);
       if (roles.includes('👨‍🦽 Los Mas Letales')) {
-        msg.react("🏳️‍🌈");
+        msg.react('🏳️‍🌈');
         msg.react("👬");
         msg.react("🌈");
         msg.react("💅");
