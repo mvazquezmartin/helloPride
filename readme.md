@@ -1,4 +1,4 @@
-# helloPride
+# HelloPride
 
 This project is a simple Discord bot that reacts to certain events and messages on the server with emojis related to LGBTQ+ pride.
 
