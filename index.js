@@ -3,7 +3,7 @@ const express = require("express");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 
 const reactions = () => {
-  const reactionsEmoji = ["🌈", "🏳‍🌈", "👬", "💅", "🍌"];
+  const reactionsEmoji = ["🌈", '🏳‍🌈', "👬", "💅", "🍌", '👨‍❤️‍💋‍👨'];
   const reactionsLength = reactionsEmoji.length;
   const randomReaction =
     reactionsEmoji[Math.floor(Math.random() * reactionsLength)];
@@ -54,6 +54,7 @@ client.on("messageCreate", (msg) => {
         msg.react("🌈");
         msg.react("💅");
         msg.react("🍌");
+        msg.react('👨‍❤️‍💋‍👨');
       }
     }
   }
