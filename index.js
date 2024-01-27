@@ -16,11 +16,15 @@ client.once(Events.ClientReady, (readyClient) => {
 });
 
 client.on('messageCreate', (msg) => {
-  if (
-    (msg.system && msg.type === 7) ||
-    (!msg.author.bot && hasSpecialRole(msg))
-  ) {
+  if (msg.system && msg.type === 7) {
     const shuffledReactions = reactions();
+    shuffledReactions.forEach((reaction) => {
+      msg.react(reaction).catch(console.error);
+    });
+  }
+
+  if (!msg.author.bot && hasSpecialRole(msg)) {
+    const shuffledReactions = reactions(true);
     shuffledReactions.forEach((reaction) => {
       msg.react(reaction).catch(console.error);
     });
