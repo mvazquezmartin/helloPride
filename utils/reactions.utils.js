@@ -9,4 +9,5 @@ const reactions = (returnSlice) => {
   return shuffledReactions;
 };
 
+// only for my github
 module.exports = reactions;
