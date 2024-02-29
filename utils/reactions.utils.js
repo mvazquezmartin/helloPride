@@ -3,7 +3,7 @@ const reactions = (returnSlice) => {
   const shuffledReactions = reactionsEmoji.sort(() => Math.random() - 0.5);
 
   if (returnSlice) {
-    const numberSlice = 2;
+    const numberSlice = 1;
     return shuffledReactions.slice(0, numberSlice);
   }
   return shuffledReactions;
