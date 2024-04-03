@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const reactions = require('./utils/reactions.utils');
-const hasSpecialRole = require('./utils/hasRole.utils');
+// const reactions = require('./utils/reactions.utils');
+// const hasSpecialRole = require('./utils/hasRole.utils');
 
 const client = new Client({
   intents: [
@@ -24,13 +24,13 @@ client.on('messageCreate', (msg) => {
     msg.react('🏳️‍🌈').catch(console.error);
   }
 
-  if (!msg.author.bot && hasSpecialRole(msg)) {
-    const shuffledReactions = reactions(true);
-    shuffledReactions.forEach((reaction) => {
-      msg.react(reaction).catch(console.error);
-    });
-    // msg.react('🍌').catch(console.error);
-  }
+  // if (!msg.author.bot && hasSpecialRole(msg)) {
+  //   const shuffledReactions = reactions(true);
+  //   shuffledReactions.forEach((reaction) => {
+  //     msg.react(reaction).catch(console.error);
+  //   });
+  //   msg.react('🍌').catch(console.error);
+  // }
 });
 
 client.login(process.env.TOKEN);
